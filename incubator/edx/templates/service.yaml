@@ -1,0 +1,149 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cms
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 8000
+      protocol: TCP
+  selector:
+    app: cms
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: forum
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 4567
+      protocol: TCP
+  selector:
+    app: forum
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lms
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 8000
+      protocol: TCP
+  selector:
+    app: lms
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 9200
+      protocol: TCP
+  selector:
+    app: elasticsearch
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: memcached
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 11211
+      protocol: TCP
+  selector:
+    app: memcached
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 27017
+      protocol: TCP
+  selector:
+    app: mongodb
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 3306
+      protocol: TCP
+  selector:
+    app: mysql
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      protocol: TCP
+      name: http
+      targetPort: http-port
+    - port: 443
+      protocol: TCP
+      name: https
+      targetPort: https-port
+  selector:
+    app: nginx
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 5672
+      protocol: TCP
+  selector:
+    app: rabbitmq
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: smtp
+  namespace: helm-openedx
+spec:
+  type: NodePort
+  ports:
+    - port: 25
+      protocol: TCP
+  selector:
+    app: smtp

@@ -1,0 +1,8 @@
+apiVersion: v1
+appVersion: "Ironwood"
+description: The Open edX platform.
+name: edx
+version: 0.1.0
+maintainers:
+  - name: "weijie"
+
